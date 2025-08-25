@@ -65,7 +65,7 @@ const Index = () => {
           className="fixed inset-4 bg-background border rounded-lg shadow-2xl z-[60] flex flex-col"
         >
           <div className="flex items-center justify-between p-4 border-b">
-            <h3 className="font-semibold text-foreground">ИИ-консультант</h3>
+            <h3 className="font-semibold text-foreground"></h3>
             <Button
               variant="ghost"
               size="sm"
