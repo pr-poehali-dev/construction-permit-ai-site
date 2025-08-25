@@ -70,14 +70,23 @@ const CTA = ({ showAIAgent, setShowAIAgent }: CTAProps) => {
                 <div className="space-y-4">
                   <div className="flex items-center justify-center gap-4">
                     <Icon name="Phone" className="h-6 w-6 text-primary" />
-                    <span className="text-xl font-semibold text-foreground">+7 (952) 147-46-03</span>
+                    <a 
+                      href="https://wa.me/79521474603" 
+                      target="_blank"
+                      className="text-xl font-semibold text-foreground hover:text-primary transition-colors cursor-pointer"
+                    >
+                      +7 (952) 147-46-03
+                    </a>
                   </div>
                   <div className="flex items-center justify-center gap-4">
                     <Icon name="Mail" className="h-6 w-6 text-primary" />
                     <span className="text-lg text-foreground">k.karpp@mail.ru</span>
                   </div>
                   <div className="flex justify-center gap-4 pt-4">
-                    <Button className="bg-green-600 hover:bg-green-700">
+                    <Button 
+                      className="bg-green-600 hover:bg-green-700"
+                      onClick={() => window.open('https://wa.me/79521474603', '_blank')}
+                    >
                       <Icon name="MessageSquare" className="h-4 w-4 mr-2" />
                       WhatsApp
                     </Button>
