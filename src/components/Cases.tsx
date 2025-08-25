@@ -78,14 +78,7 @@ const Cases = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <Button 
-            variant="outline" 
-            className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 text-lg font-semibold"
-          >
-            Смотреть все кейсы →
-          </Button>
-        </div>
+
 
       </div>
     </section>
