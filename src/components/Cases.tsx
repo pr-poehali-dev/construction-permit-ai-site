@@ -78,12 +78,7 @@ const Cases = () => {
           ))}
         </div>
         
-        <div className="text-center mt-8">
-          <Button variant="outline" size="lg">
-            Смотреть все кейсы
-            <Icon name="ArrowRight" className="h-4 w-4 ml-2" />
-          </Button>
-        </div>
+
       </div>
     </section>
   );
