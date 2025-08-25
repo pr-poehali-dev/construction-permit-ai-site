@@ -45,7 +45,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-16 bg-secondary/30">
+    <section id="services" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 
@@ -84,7 +84,7 @@ const Services = () => {
                   
                   <div className="grid md:grid-cols-3 gap-4">
                     <div>
-                      <p className="text-sm font-medium text-red-600 mb-2">Ситуация:</p>
+                      <p className="text-sm font-medium text-destructive mb-2">Ситуация:</p>
                       <p className="text-sm text-muted-foreground mb-4 italic">«{service.pain}»</p>
                     </div>
                     
@@ -94,7 +94,7 @@ const Services = () => {
                     </div>
                     
                     <div>
-                      <p className="text-sm font-medium text-green-600 mb-2">Что вы получаете:</p>
+                      <p className="text-sm font-medium text-accent mb-2">Что вы получаете:</p>
                       <p className="text-sm text-foreground font-medium">{service.result}</p>
                     </div>
                   </div>

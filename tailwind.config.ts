@@ -61,7 +61,24 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Новые фирменные цвета
+				navy: {
+					DEFAULT: '#0A2E5D',
+					foreground: '#FFFFFF'
+				},
+				coldgray: {
+					DEFAULT: '#5A6B7C',
+					foreground: '#FFFFFF'
+				},
+				gold: {
+					DEFAULT: '#C6A86D',
+					foreground: '#0A2E5D'
 				}
+			},
+			fontFamily: {
+				inter: ['Inter', 'system-ui', 'sans-serif'],
+				heading: ['Inter', 'system-ui', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

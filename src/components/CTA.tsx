@@ -19,7 +19,7 @@ const CTA = ({ showAIAgent, setShowAIAgent }: CTAProps) => {
   return (
     <>
       {/* CTA Section */}
-      <section className="py-16 bg-primary/5">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 
@@ -84,7 +84,7 @@ const CTA = ({ showAIAgent, setShowAIAgent }: CTAProps) => {
                   </div>
                   <div className="flex justify-center gap-4 pt-4">
                     <Button 
-                      className="bg-green-600 hover:bg-green-700"
+                      className="bg-green-600 hover:bg-green-700 text-white font-medium"
                       onClick={() => window.open('https://wa.me/79521474603', '_blank')}
                     >
                       <Icon name="MessageSquare" className="h-4 w-4 mr-2" />
@@ -92,6 +92,7 @@ const CTA = ({ showAIAgent, setShowAIAgent }: CTAProps) => {
                     </Button>
                     <Button 
                       variant="outline"
+                      className="border-gold text-gold hover:bg-gold hover:text-navy font-medium"
                       onClick={() => window.open('https://t.me/csrek_bot', '_blank')}
                     >
                       <Icon name="Send" className="h-4 w-4 mr-2" />

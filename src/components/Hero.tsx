@@ -14,7 +14,7 @@ const Hero = ({ showAIAgent, setShowAIAgent }: HeroProps) => {
   const { ref: buttonRef, isVisible: buttonVisible } = useScrollAnimation({ threshold: 0.3 });
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/10">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 
@@ -43,7 +43,7 @@ const Hero = ({ showAIAgent, setShowAIAgent }: HeroProps) => {
           >
             <Button
               onClick={() => setShowAIAgent(!showAIAgent)}
-              className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-8 py-3 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+              className="btn-cta px-8 py-3 rounded text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Icon name="MessageCircle" className="h-5 w-5 mr-2" />
               Спросить консультанта
