@@ -40,7 +40,16 @@ const Index = () => {
       {/* Floating AI Agent Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <Button
-          onClick={() => setShowAIAgent(true)}
+          onClick={() => {
+            setShowAIAgent(true);
+            // Переходим к агенту с небольшой задержкой для плавности
+            setTimeout(() => {
+              const agentElement = document.querySelector('[data-ai-agent]');
+              if (agentElement) {
+                agentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }
+            }, 100);
+          }}
           size="lg"
           className="rounded-full w-16 h-16 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-2xl hover:shadow-3xl transition-all duration-300"
         >
