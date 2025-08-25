@@ -57,10 +57,32 @@ const Index = () => {
         </Button>
       </div>
 
-      {/* Exit Intent AI Agent (placeholder) */}
-      <div id="exit-intent-agent" className="hidden">
-        {/* This would be triggered on exit intent */}
-      </div>
+      {/* AI Agent Chat Widget */}
+      {showAIAgent && (
+        <div 
+          data-ai-agent
+          className="fixed inset-4 bg-background border rounded-lg shadow-2xl z-[60] flex flex-col"
+        >
+          <div className="flex items-center justify-between p-4 border-b">
+            <h3 className="font-semibold text-foreground">ИИ-консультант</h3>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setShowAIAgent(false)}
+            >
+              <Icon name="X" className="h-4 w-4" />
+            </Button>
+          </div>
+          <div className="flex-1 p-0 overflow-hidden">
+            <iframe 
+              allow="microphone;autoplay" 
+              style={{width: '100%', height: '100%', border: 'none'}}
+              src="https://functions.pro-talk.ru/api/v1.0/chatgpt_widget_dialog_api?record_id=recnmE0ZxDcfwmU79&promt_id=33617&lang=ru&fullscreen=0&voice=1&file=1&circle=1"
+              title="ИИ-консультант"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
