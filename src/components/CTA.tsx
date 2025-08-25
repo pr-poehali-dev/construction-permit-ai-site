@@ -6,12 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-interface CTAProps {
-  showAIAgent: boolean;
-  setShowAIAgent: (show: boolean) => void;
-}
-
-const CTA = ({ showAIAgent, setShowAIAgent }: CTAProps) => {
+const CTA = () => {
   const { ref: ctaTitleRef, isVisible: ctaTitleVisible } = useScrollAnimation();
   const { ref: ctaContentRef, isVisible: ctaContentVisible } = useScrollAnimation();
   const { ref: guaranteeTitleRef, isVisible: guaranteeTitleVisible } = useScrollAnimation();
@@ -84,16 +79,16 @@ const CTA = ({ showAIAgent, setShowAIAgent }: CTAProps) => {
                   </div>
                   <div className="flex justify-center gap-4 pt-4">
                     <Button 
-                      className="bg-green-600 hover:bg-green-700 text-white font-medium"
+                      className="bg-[#25D366] hover:bg-[#20bc5a] text-white font-medium"
                       onClick={() => window.open('https://wa.me/79521474603', '_blank')}
                     >
-                      <Icon name="MessageSquare" className="h-4 w-4 mr-2" />
+                      <Icon name="MessageCircle" className="h-4 w-4 mr-2" />
                       WhatsApp
                     </Button>
                     <Button 
                       variant="outline"
-                      className="border-gold text-gold hover:bg-gold hover:text-navy font-medium"
-                      onClick={() => window.open('https://t.me/csrek_bot', '_blank')}
+                      className="border-[#0088cc] text-[#0088cc] hover:bg-[#0088cc] hover:text-white font-medium"
+                      onClick={() => window.open('https://t.me/+79521474603', '_blank')}
                     >
                       <Icon name="Send" className="h-4 w-4 mr-2" />
                       Telegram
@@ -163,24 +158,14 @@ const CTA = ({ showAIAgent, setShowAIAgent }: CTAProps) => {
       </section>
 
       {/* Contact Form */}
-      <section id="contacts" className="py-16 bg-secondary/30">
+      <section id="contacts" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold text-foreground mb-4">Получить консультацию</h2>
               <p className="text-muted-foreground">Расскажите о своей ситуации, и мы дадим экспертную оценку</p>
               
-              {/* AI Agent в форме заявки */}
-              <div className="mt-6">
-                <Button
-                  onClick={() => setShowAIAgent(!showAIAgent)}
-                  variant="outline"
-                  className="mb-4"
-                >
-                  <Icon name="Bot" className="h-4 w-4 mr-2" />
-                  Помощь подобрать услугу →
-                </Button>
-              </div>
+
             </div>
             
             <Card className="p-6">

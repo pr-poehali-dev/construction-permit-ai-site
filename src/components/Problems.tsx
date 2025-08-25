@@ -79,36 +79,29 @@ const Problems = () => {
                   <h3 className="font-semibold text-foreground mb-4">Мы знаем:</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
-                      <Icon name="CheckCircle" className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">Какие документы примут — а какие сразу вернут</span>
+                      <Icon name="CheckCircle" className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                      <span className="text-secondary">Какие документы примут — а какие сразу вернут</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <Icon name="CheckCircle" className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">Куда подавать — и в какой форме</span>
+                      <Icon name="CheckCircle" className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                      <span className="text-secondary">Куда подавать — и в какой форме</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <Icon name="CheckCircle" className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">Кто принимает решение — и как с ним говорить</span>
+                      <Icon name="CheckCircle" className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                      <span className="text-secondary">Кто принимает решение — и как с ним говорить</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <Icon name="CheckCircle" className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">Где можно ускорить — а где лучше не спешить</span>
+                      <Icon name="CheckCircle" className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                      <span className="text-secondary">Где можно ускорить — а где лучше не спешить</span>
                     </li>
                   </ul>
                 </div>
-                <div className="bg-background p-6 rounded-xl border flex gap-6 items-center">
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-primary mb-4">Наша задача:</h3>
-                    <p className="text-foreground font-medium text-lg">
-                      Чтобы ваш объект прошёл согласования с первого раза
+                <div className="bg-white p-6 rounded-xl border-2 border-accent/20 shadow-sm">
+                  <div className="text-center">
+                    <h3 className="font-semibold text-primary mb-4 text-xl">Мы — Центр строительных разрешений.</h3>
+                    <p className="text-primary font-bold text-lg mb-2">
+                      Наша задача — чтобы ваш объект прошёл согласования с первого раза.
                     </p>
-                  </div>
-                  <div className="flex-shrink-0 w-32 h-32">
-                    <img 
-                      src="/img/9ed7c03a-576f-41bf-9796-1c409140e635.jpg" 
-                      alt="Успешное согласование документов"
-                      className="w-full h-full object-cover rounded-lg"
-                    />
                   </div>
                 </div>
               </div>
