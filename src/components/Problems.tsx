@@ -96,11 +96,20 @@ const Problems = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="bg-background p-6 rounded-xl border">
-                  <h3 className="font-semibold text-primary mb-4">Наша задача:</h3>
-                  <p className="text-foreground font-medium text-lg">
-                    Чтобы ваш объект прошёл согласования с первого раза
-                  </p>
+                <div className="bg-background p-6 rounded-xl border flex gap-6 items-center">
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-primary mb-4">Наша задача:</h3>
+                    <p className="text-foreground font-medium text-lg">
+                      Чтобы ваш объект прошёл согласования с первого раза
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0 w-32 h-32">
+                    <img 
+                      src="/img/9ed7c03a-576f-41bf-9796-1c409140e635.jpg" 
+                      alt="Успешное согласование документов"
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
