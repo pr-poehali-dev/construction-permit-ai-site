@@ -88,7 +88,7 @@ const CTA = () => {
                     <Button 
                       variant="outline"
                       className="border-[#0088cc] text-[#0088cc] hover:bg-[#0088cc] hover:text-white font-medium"
-                      onClick={() => window.open('https://t.me/+79521474603', '_blank')}
+                      onClick={() => window.open('https://t.me/csrek_bot', '_blank')}
                     >
                       <Icon name="Send" className="h-4 w-4 mr-2" />
                       Telegram
