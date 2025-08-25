@@ -90,7 +90,7 @@ const Services = () => {
                     
                     <div>
                       <p className="text-sm font-medium text-primary mb-2">Как мы это решаем:</p>
-                      <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
+                      <p className="text-sm text-muted-foreground mb-4">{service.description.replace('задним числом', 'ретроспективно')}</p>
                     </div>
                     
                     <div>

@@ -23,8 +23,11 @@ const Hero = ({ showAIAgent, setShowAIAgent }: HeroProps) => {
               titleVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0 translate-y-8'
             }`}
           >
-            Получите разрешение на строительство и ввод в эксплуатацию
+            Центр строительных разрешений
           </h1>
+          <h2 className="text-2xl md:text-3xl font-medium text-foreground mb-4">
+            Получите разрешение на строительство и ввод в эксплуатацию
+          </h2>
           <p 
             ref={subtitleRef}
             className={`text-xl md:text-2xl text-muted-foreground mb-4 font-medium transition-all duration-1000 delay-300 ${
