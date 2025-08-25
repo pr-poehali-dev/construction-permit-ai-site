@@ -81,7 +81,10 @@ const CTA = ({ showAIAgent, setShowAIAgent }: CTAProps) => {
                       <Icon name="MessageSquare" className="h-4 w-4 mr-2" />
                       WhatsApp
                     </Button>
-                    <Button variant="outline">
+                    <Button 
+                      variant="outline"
+                      onClick={() => window.open('https://t.me/csrek_bot', '_blank')}
+                    >
                       <Icon name="Send" className="h-4 w-4 mr-2" />
                       Telegram
                     </Button>
