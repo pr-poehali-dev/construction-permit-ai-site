@@ -1,0 +1,191 @@
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import Icon from "@/components/ui/icon";
+
+interface CTAProps {
+  showAIAgent: boolean;
+  setShowAIAgent: (show: boolean) => void;
+}
+
+const CTA = ({ showAIAgent, setShowAIAgent }: CTAProps) => {
+  return (
+    <>
+      {/* CTA Section */}
+      <section className="py-16 bg-primary/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+              Хотите, чтобы документы прошли — а не «были поданы»?
+            </h2>
+            
+            <div className="bg-background p-8 rounded-2xl shadow-lg border">
+              <p className="text-lg text-foreground mb-6">
+                Позвоните или напишите. Расскажите, что нужно оформить.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div className="text-left">
+                  <h3 className="font-semibold text-foreground mb-4">Мы скажем:</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2">
+                      <Icon name="CheckCircle" className="h-4 w-4 text-primary" />
+                      <span className="text-muted-foreground">можно ли</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Icon name="CheckCircle" className="h-4 w-4 text-primary" />
+                      <span className="text-muted-foreground">сколько времени займёт</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Icon name="CheckCircle" className="h-4 w-4 text-primary" />
+                      <span className="text-muted-foreground">во что обойдётся</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Icon name="CheckCircle" className="h-4 w-4 text-primary" />
+                      <span className="text-muted-foreground">какие риски</span>
+                    </li>
+                  </ul>
+                  <p className="text-sm text-muted-foreground mt-4 font-medium">
+                    Без воды. По делу.
+                  </p>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center justify-center gap-4">
+                    <Icon name="Phone" className="h-6 w-6 text-primary" />
+                    <span className="text-xl font-semibold text-foreground">+7 (952) 147-46-03</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-4">
+                    <Icon name="Mail" className="h-6 w-6 text-primary" />
+                    <span className="text-lg text-foreground">k.karpp@mail.ru</span>
+                  </div>
+                  <div className="flex justify-center gap-4 pt-4">
+                    <Button className="bg-green-600 hover:bg-green-700">
+                      <Icon name="MessageSquare" className="h-4 w-4 mr-2" />
+                      WhatsApp
+                    </Button>
+                    <Button variant="outline">
+                      <Icon name="Send" className="h-4 w-4 mr-2" />
+                      Telegram
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Guarantee Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
+              Мы не обещаем 100%
+            </h2>
+            
+            <div className="bg-secondary/20 p-8 rounded-2xl border">
+              <p className="text-lg text-foreground mb-6">
+                Но мы делаем всё, чтобы:
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <Icon name="Shield" className="h-6 w-6 text-primary" />
+                  </div>
+                  <p className="text-muted-foreground text-center">вас не оштрафовали</p>
+                </div>
+                
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <Icon name="Home" className="h-6 w-6 text-primary" />
+                  </div>
+                  <p className="text-muted-foreground text-center">объект не снесли</p>
+                </div>
+                
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <Icon name="CheckCircle" className="h-6 w-6 text-primary" />
+                  </div>
+                  <p className="text-muted-foreground text-center">документы приняли с первого раза</p>
+                </div>
+              </div>
+              
+              <Separator className="my-8" />
+              
+              <p className="text-xl font-semibold text-primary">
+                Вы платите за результат, а не за попытку.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section id="contacts" className="py-16 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-foreground mb-4">Получить консультацию</h2>
+              <p className="text-muted-foreground">Расскажите о своей ситуации, и мы дадим экспертную оценку</p>
+              
+              {/* AI Agent в форме заявки */}
+              <div className="mt-6">
+                <Button
+                  onClick={() => setShowAIAgent(!showAIAgent)}
+                  variant="outline"
+                  className="mb-4"
+                >
+                  <Icon name="Bot" className="h-4 w-4 mr-2" />
+                  Помощь подобрать услугу →
+                </Button>
+              </div>
+            </div>
+            
+            <Card className="p-6">
+              <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-2 block">Имя</label>
+                    <Input placeholder="Ваше имя" />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-2 block">Телефон</label>
+                    <Input placeholder="+7 (___) ___-__-__" />
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="text-sm font-medium text-foreground mb-2 block">Email</label>
+                  <Input placeholder="your@email.com" type="email" />
+                </div>
+                
+                <div>
+                  <label className="text-sm font-medium text-foreground mb-2 block">Опишите вашу ситуацию</label>
+                  <Textarea 
+                    placeholder="Расскажите, что нужно оформить, в каком городе, какие сложности возникли..."
+                    rows={4}
+                  />
+                </div>
+                
+                <Button size="lg" className="w-full">
+                  <Icon name="Send" className="h-4 w-4 mr-2" />
+                  Получить консультацию
+                </Button>
+                
+                <p className="text-xs text-muted-foreground text-center">
+                  Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
+                </p>
+              </form>
+            </Card>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default CTA;
