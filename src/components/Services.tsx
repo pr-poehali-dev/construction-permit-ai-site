@@ -1,8 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Services = () => {
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
   const services = [
     {
       icon: "FileText",
@@ -45,12 +48,22 @@ const Services = () => {
     <section id="services" className="py-16 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 
+            ref={titleRef}
+            className={`text-3xl md:text-4xl font-bold text-foreground mb-4 transition-all duration-1000 ${
+              titleVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0 translate-y-8'
+            }`}
+          >
             Что мы делаем
           </h2>
         </div>
         
-        <div className="grid gap-8 max-w-6xl mx-auto">
+        <div 
+          ref={servicesRef}
+          className={`grid gap-8 max-w-6xl mx-auto transition-all duration-1000 delay-300 ${
+            servicesVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0 translate-y-8'
+          }`}
+        >
           {services.map((service, index) => (
             <Card key={index} className="p-6 hover:shadow-lg transition-shadow duration-300 border-l-4 border-l-primary">
               <div className="flex flex-col md:flex-row gap-6">

@@ -2,8 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Cases = () => {
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  const { ref: casesRef, isVisible: casesVisible } = useScrollAnimation();
   const cases = [
     {
       title: "СТО в Новосибирске",
@@ -39,12 +42,22 @@ const Cases = () => {
     <section id="cases" className="py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 
+            ref={titleRef}
+            className={`text-3xl md:text-4xl font-bold text-foreground mb-4 transition-all duration-1000 ${
+              titleVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0 translate-y-8'
+            }`}
+          >
             Примеры, а не обещания
           </h2>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div 
+          ref={casesRef}
+          className={`grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-5xl mx-auto transition-all duration-1000 delay-300 ${
+            casesVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0 translate-y-8'
+          }`}
+        >
           {cases.map((caseItem, index) => (
             <Card key={index} className="p-6 hover:shadow-lg transition-shadow duration-300">
               <CardHeader className="pb-4">

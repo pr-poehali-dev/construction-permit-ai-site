@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface CTAProps {
   showAIAgent: boolean;
@@ -11,17 +12,31 @@ interface CTAProps {
 }
 
 const CTA = ({ showAIAgent, setShowAIAgent }: CTAProps) => {
+  const { ref: ctaTitleRef, isVisible: ctaTitleVisible } = useScrollAnimation();
+  const { ref: ctaContentRef, isVisible: ctaContentVisible } = useScrollAnimation();
+  const { ref: guaranteeTitleRef, isVisible: guaranteeTitleVisible } = useScrollAnimation();
+  const { ref: guaranteeContentRef, isVisible: guaranteeContentVisible } = useScrollAnimation();
   return (
     <>
       {/* CTA Section */}
       <section className="py-16 bg-primary/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+            <h2 
+              ref={ctaTitleRef}
+              className={`text-3xl md:text-4xl font-bold text-foreground mb-8 transition-all duration-1000 ${
+                ctaTitleVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0 translate-y-8'
+              }`}
+            >
               Хотите, чтобы документы прошли — а не «были поданы»?
             </h2>
             
-            <div className="bg-background p-8 rounded-2xl shadow-lg border">
+            <div 
+              ref={ctaContentRef}
+              className={`bg-background p-8 rounded-2xl shadow-lg border transition-all duration-1000 delay-300 ${
+                ctaContentVisible ? 'opacity-100 animate-scale-in' : 'opacity-0 scale-95'
+              }`}
+            >
               <p className="text-lg text-foreground mb-6">
                 Позвоните или напишите. Расскажите, что нужно оформить.
               </p>
@@ -82,11 +97,21 @@ const CTA = ({ showAIAgent, setShowAIAgent }: CTAProps) => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
+            <h2 
+              ref={guaranteeTitleRef}
+              className={`text-2xl md:text-3xl font-bold text-foreground mb-8 transition-all duration-1000 ${
+                guaranteeTitleVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0 translate-y-8'
+              }`}
+            >
               Мы не обещаем 100%
             </h2>
             
-            <div className="bg-secondary/20 p-8 rounded-2xl border">
+            <div 
+              ref={guaranteeContentRef}
+              className={`bg-secondary/20 p-8 rounded-2xl border transition-all duration-1000 delay-300 ${
+                guaranteeContentVisible ? 'opacity-100 animate-scale-in' : 'opacity-0 scale-95'
+              }`}
+            >
               <p className="text-lg text-foreground mb-6">
                 Но мы делаем всё, чтобы:
               </p>

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import { useState } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface HeroProps {
   showAIAgent: boolean;
@@ -8,19 +9,38 @@ interface HeroProps {
 }
 
 const Hero = ({ showAIAgent, setShowAIAgent }: HeroProps) => {
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  const { ref: subtitleRef, isVisible: subtitleVisible } = useScrollAnimation({ threshold: 0.2 });
+  const { ref: buttonRef, isVisible: buttonVisible } = useScrollAnimation({ threshold: 0.3 });
+
   return (
     <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/10">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+          <h1 
+            ref={titleRef}
+            className={`text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight transition-all duration-1000 ${
+              titleVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0 translate-y-8'
+            }`}
+          >
             Получите разрешение на строительство и ввод в эксплуатацию
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-4 font-medium">
+          <p 
+            ref={subtitleRef}
+            className={`text-xl md:text-2xl text-muted-foreground mb-4 font-medium transition-all duration-1000 delay-300 ${
+              subtitleVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0 translate-y-8'
+            }`}
+          >
             без штрафов, сносов и бесконечных согласований
           </p>
           
           {/* AI Agent под заголовком */}
-          <div className="mb-8">
+          <div 
+            ref={buttonRef}
+            className={`mb-8 transition-all duration-1000 delay-500 ${
+              buttonVisible ? 'opacity-100 animate-scale-in' : 'opacity-0 scale-95'
+            }`}
+          >
             <Button
               onClick={() => setShowAIAgent(!showAIAgent)}
               className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-8 py-3 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"

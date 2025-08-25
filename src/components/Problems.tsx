@@ -1,6 +1,12 @@
 import Icon from "@/components/ui/icon";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Problems = () => {
+  const { ref: problemsTitleRef, isVisible: problemsTitleVisible } = useScrollAnimation();
+  const { ref: problemsListRef, isVisible: problemsListVisible } = useScrollAnimation();
+  const { ref: solutionTitleRef, isVisible: solutionTitleVisible } = useScrollAnimation();
+  const { ref: solutionContentRef, isVisible: solutionContentVisible } = useScrollAnimation();
+
   const problems = [
     "Потеряли 3–6 месяцев — потому что подали не тот пакет?",
     "Получили отказ — из-за ошибки в схеме или несогласованного выноса сетей?",
@@ -15,10 +21,20 @@ const Problems = () => {
       <section className="py-16 bg-red-50/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
+            <h2 
+              ref={problemsTitleRef}
+              className={`text-3xl md:text-4xl font-bold mb-8 text-foreground transition-all duration-1000 ${
+                problemsTitleVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0 translate-y-8'
+              }`}
+            >
               Вы теряете деньги, если оформляете документы сами
             </h2>
-            <div className="grid gap-4 mb-8">
+            <div 
+              ref={problemsListRef}
+              className={`grid gap-4 mb-8 transition-all duration-1000 delay-300 ${
+                problemsListVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0 translate-y-8'
+              }`}
+            >
               {problems.map((problem, index) => (
                 <div key={index} className="flex items-start gap-3 p-4 bg-background rounded-lg border border-red-200/50 shadow-sm">
                   <Icon name="AlertTriangle" className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
@@ -40,10 +56,20 @@ const Problems = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
+            <h2 
+              ref={solutionTitleRef}
+              className={`text-3xl md:text-4xl font-bold mb-8 text-foreground transition-all duration-1000 ${
+                solutionTitleVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0 translate-y-8'
+              }`}
+            >
               Мы делаем так, чтобы вы не платили дважды
             </h2>
-            <div className="bg-primary/5 p-8 rounded-2xl border border-primary/20 mb-8">
+            <div 
+              ref={solutionContentRef}
+              className={`bg-primary/5 p-8 rounded-2xl border border-primary/20 mb-8 transition-all duration-1000 delay-300 ${
+                solutionContentVisible ? 'opacity-100 animate-scale-in' : 'opacity-0 scale-95'
+              }`}
+            >
               <p className="text-lg text-foreground mb-6">
                 С 2004 года мы оформляем разрешения на строительство и ввод в эксплуатацию — не как посредники, а как технический заказчик.
               </p>
