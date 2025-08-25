@@ -84,17 +84,17 @@ const Services = () => {
                   
                   <div className="grid md:grid-cols-3 gap-4">
                     <div>
-                      <p className="text-sm font-medium text-red-600 mb-2">Боль:</p>
+                      <p className="text-sm font-medium text-red-600 mb-2">Ситуация:</p>
                       <p className="text-sm text-muted-foreground mb-4 italic">«{service.pain}»</p>
                     </div>
                     
                     <div>
-                      <p className="text-sm font-medium text-primary mb-2">Решение:</p>
+                      <p className="text-sm font-medium text-primary mb-2">Как мы это решаем:</p>
                       <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
                     </div>
                     
                     <div>
-                      <p className="text-sm font-medium text-green-600 mb-2">Результат:</p>
+                      <p className="text-sm font-medium text-green-600 mb-2">Что вы получаете:</p>
                       <p className="text-sm text-foreground font-medium">{service.result}</p>
                     </div>
                   </div>
