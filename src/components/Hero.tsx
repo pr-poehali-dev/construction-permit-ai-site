@@ -48,7 +48,7 @@ export default function Hero() {
               WhatsApp
             </a>
             <a 
-              href="https://t.me/+79521474603" 
+              href="https://t.me/csrek_bot" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-[#0088cc] hover:bg-[#006ba6] text-white px-8 py-4 rounded font-semibold flex items-center justify-center gap-3 transition-all duration-300 hover:shadow-lg"
