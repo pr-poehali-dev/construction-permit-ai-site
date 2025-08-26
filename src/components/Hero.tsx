@@ -3,8 +3,15 @@ import Icon from '@/components/ui/icon';
 
 export default function Hero() {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
+        style={{
+          backgroundImage: 'url(/img/4fd33673-59ea-417e-af21-d9eafef462b9.jpg)'
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/90 to-white/95" />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-8 leading-tight">
             Центр строительных разрешений
