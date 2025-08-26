@@ -5,21 +5,21 @@ export default function Hero() {
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: 'url(/img/a345b5bc-4f96-4ac5-84b5-ff1050936060.jpg)'
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-white/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-8 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight drop-shadow-lg">
             Центр строительных разрешений
           </h1>
           
-          <h2 className="text-xl md:text-2xl text-secondary mb-12 font-medium leading-relaxed">
+          <h2 className="text-xl md:text-2xl text-white mb-12 font-medium leading-relaxed drop-shadow-md">
             Получите разрешение на строительство и ввод в эксплуатацию —<br />
-            <span className="text-2xl font-semibold text-[#e89f23]">без штрафов, сносов и бесконечных согласований</span>
+            <span className="text-yellow-300 font-semibold drop-shadow-md">без штрафов, сносов и бесконечных согласований</span>
           </h2>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
