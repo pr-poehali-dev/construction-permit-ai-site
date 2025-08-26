@@ -19,7 +19,7 @@ export default function Hero() {
           
           <h2 className="text-xl md:text-2xl text-secondary mb-12 font-medium leading-relaxed">
             Получите разрешение на строительство и ввод в эксплуатацию —<br />
-            <span className="text-accent font-semibold">без штрафов, сносов и бесконечных согласований</span>
+            <span className="text-2xl font-semibold text-[#e89f23]">без штрафов, сносов и бесконечных согласований</span>
           </h2>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
