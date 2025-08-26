@@ -5,12 +5,12 @@ export default function Hero() {
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
         style={{
           backgroundImage: 'url(/img/a345b5bc-4f96-4ac5-84b5-ff1050936060.jpg)'
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/75 to-white/85" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-white/60" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-8 leading-tight">
