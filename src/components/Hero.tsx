@@ -7,7 +7,7 @@ export default function Hero() {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
         style={{
-          backgroundImage: 'url(/img/4fd33673-59ea-417e-af21-d9eafef462b9.jpg)'
+          backgroundImage: 'url(/img/a345b5bc-4f96-4ac5-84b5-ff1050936060.jpg)'
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-white/90 to-white/95" />
