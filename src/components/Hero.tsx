@@ -26,12 +26,18 @@ export default function Hero() {
             <a 
               href="tel:+79521474603" 
               className="flex items-center gap-3 text-lg font-semibold hover:text-accent transition-colors text-[#f6f4f1]"
-            ></a>
+            >
+              <Icon name="Phone" size={20} />
+              +7 (952) 147-46-03
+            </a>
             <span className="hidden sm:block text-gray-300">|</span>
             <a 
               href="mailto:k.karpp@mail.ru" 
               className="flex items-center gap-3 text-lg font-semibold hover:text-accent transition-colors text-[#fcfaf8]"
-            ></a>
+            >
+              <Icon name="Mail" size={20} />
+              k.karpp@mail.ru
+            </a>
           </div>
           
           <p className="mb-12 text-lg text-[#dfe4e9]">
