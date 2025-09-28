@@ -8,7 +8,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Icon name="Building2" className="h-8 w-8 text-primary" />
-            <h1 className="text-xl font-bold">Центр строительных разрешений</h1>
+            <h1 className="text-xl font-bold">Центр строительных решений</h1>
           </div>
           <nav className="hidden md:flex items-center space-x-6">
             <a href="#services" className="hover:text-primary transition-colors">Услуги</a>

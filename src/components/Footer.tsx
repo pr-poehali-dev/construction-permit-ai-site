@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Icon name="Building2" className="h-6 w-6" />
-              <h3 className="text-lg font-bold">Центр строительных разрешений</h3>
+              <h3 className="text-lg font-bold">Центр строительных решений</h3>
             </div>
             <p className="text-gray-300 mb-4">
               Документальные операции с недвижимостью по всей России. С 2004 года.
@@ -54,7 +54,7 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Центр строительных разрешений. Все права защищены.
+            © 2024 Центр строительных решений. Все права защищены.
           </p>
           <a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">
             Политика конфиденциальности

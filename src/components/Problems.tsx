@@ -98,7 +98,7 @@ const Problems = () => {
                 </div>
                 <div className="bg-white p-6 rounded-xl border-2 border-accent/20 shadow-sm">
                   <div className="text-center">
-                    <h3 className="font-semibold text-primary mb-4 text-xl">Мы — Центр строительных разрешений.</h3>
+                    <h3 className="font-semibold text-primary mb-4 text-xl">Мы — Центр строительных решений.</h3>
                     <p className="text-primary font-bold text-lg mb-2">
                       Наша задача — чтобы ваш объект прошёл согласования с первого раза.
                     </p>
