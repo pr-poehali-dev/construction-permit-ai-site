@@ -25,7 +25,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
             <a 
               href="tel:+79521474603" 
-              className="flex items-center gap-3 text-lg font-semibold text-primary hover:text-accent transition-colors"
+              className="flex items-center gap-3 text-lg font-semibold hover:text-accent transition-colors text-[#f6f4f1]"
             >
               <Icon name="Phone" size={20} />
               +7 (952) 147-46-03
