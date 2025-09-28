@@ -5,12 +5,54 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useState } from "react";
 
 const CTA = () => {
   const { ref: ctaTitleRef, isVisible: ctaTitleVisible } = useScrollAnimation();
   const { ref: ctaContentRef, isVisible: ctaContentVisible } = useScrollAnimation();
   const { ref: guaranteeTitleRef, isVisible: guaranteeTitleVisible } = useScrollAnimation();
   const { ref: guaranteeContentRef, isVisible: guaranteeContentVisible } = useScrollAnimation();
+  
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+  
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    
+    try {
+      const response = await fetch('https://functions.poehali.dev/93c2df5c-e5d7-4c27-b8e3-6452b5f7a6b2', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', phone: '', email: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <>
       {/* CTA Section */}
@@ -174,34 +216,86 @@ const CTA = () => {
             </div>
             
             <Card className="p-6">
-              <form className="space-y-6">
+              {submitStatus === 'success' && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <div className="flex items-center gap-2">
+                    <Icon name="CheckCircle" className="h-5 w-5 text-green-600" />
+                    <p className="text-green-800 font-medium">Заявка отправлена!</p>
+                  </div>
+                  <p className="text-green-700 text-sm mt-1">Мы свяжемся с вами в ближайшее время</p>
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <div className="flex items-center gap-2">
+                    <Icon name="AlertCircle" className="h-5 w-5 text-red-600" />
+                    <p className="text-red-800 font-medium">Ошибка отправки</p>
+                  </div>
+                  <p className="text-red-700 text-sm mt-1">Попробуйте еще раз или свяжитесь по телефону</p>
+                </div>
+              )}
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">Имя</label>
-                    <Input placeholder="Ваше имя" />
+                    <Input 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Ваше имя" 
+                      required
+                    />
                   </div>
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">Телефон</label>
-                    <Input placeholder="+7 (___) ___-__-__" />
+                    <Input 
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="+7 (___) ___-__-__" 
+                      required
+                    />
                   </div>
                 </div>
                 
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">Email</label>
-                  <Input placeholder="your@email.com" type="email" />
+                  <Input 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="your@email.com" 
+                    type="email" 
+                    required
+                  />
                 </div>
                 
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">Опишите вашу ситуацию</label>
                   <Textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     placeholder="Расскажите, что нужно оформить, в каком городе, какие сложности возникли..."
                     rows={4}
+                    required
                   />
                 </div>
                 
-                <Button size="lg" className="w-full">
-                  <Icon name="Send" className="h-4 w-4 mr-2" />
-                  Получить консультацию
+                <Button size="lg" className="w-full" type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <>
+                      <Icon name="Loader2" className="h-4 w-4 mr-2 animate-spin" />
+                      Отправляем...
+                    </>
+                  ) : (
+                    <>
+                      <Icon name="Send" className="h-4 w-4 mr-2" />
+                      Получить консультацию
+                    </>
+                  )}
                 </Button>
                 
                 <p className="text-xs text-muted-foreground text-center">

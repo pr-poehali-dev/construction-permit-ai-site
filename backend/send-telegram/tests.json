@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "Handle OPTIONS request for CORS",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": "",
+      "bodyMatcher": "exact"
+    },
+    {
+      "name": "Send contact form data",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Иван Петров",
+        "phone": "+7 (999) 123-45-67",
+        "email": "ivan@example.com",
+        "message": "Нужна помощь с оформлением документов"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": "boolean",
+        "message": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Reject invalid data",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "",
+        "phone": "",
+        "email": "invalid-email"
+      },
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
