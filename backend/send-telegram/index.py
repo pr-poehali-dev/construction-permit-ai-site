@@ -17,6 +17,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     Args: event - dict с httpMethod, body, headers
           context - объект с request_id, function_name
     Returns: HTTP ответ с результатом отправки
+    Version: 1.1 - обновлено для работы с новыми секретами
     '''
     method: str = event.get('httpMethod', 'GET')
     
