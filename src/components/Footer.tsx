@@ -37,14 +37,14 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Контакты</h4>
             <div className="space-y-2 text-gray-300">
-              <div className="flex items-center gap-2">
+              <a href="tel:+79521474603" className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer">
                 <Icon name="Phone" className="h-4 w-4" />
                 <span>+7 (952) 147-46-03</span>
-              </div>
-              <div className="flex items-center gap-2">
+              </a>
+              <a href="mailto:k.karpp@mail.ru" className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer">
                 <Icon name="Mail" className="h-4 w-4" />
                 <span>k.karpp@mail.ru</span>
-              </div>
+              </a>
               <p className="text-sm">Работаем по всей России. Дистанционно.</p>
             </div>
           </div>

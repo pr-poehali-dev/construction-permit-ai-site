@@ -75,7 +75,12 @@ const CTA = () => {
                   </div>
                   <div className="flex items-center justify-center gap-4">
                     <Icon name="Mail" className="h-6 w-6 text-primary" />
-                    <span className="text-lg text-foreground">k.karpp@mail.ru</span>
+                    <a 
+                      href="mailto:k.karpp@mail.ru" 
+                      className="text-lg text-foreground hover:text-primary transition-colors cursor-pointer"
+                    >
+                      k.karpp@mail.ru
+                    </a>
                   </div>
                   <div className="flex justify-center gap-4 pt-4">
                     <Button 
