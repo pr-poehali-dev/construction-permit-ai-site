@@ -31,10 +31,7 @@ export default function Hero() {
             <a 
               href="mailto:k.karpp@mail.ru" 
               className="flex items-center gap-3 text-lg font-semibold hover:text-accent transition-colors text-[#fcfaf8]"
-            >
-              <Icon name="Mail" size={20} />
-              k.karpp@mail.ru
-            </a>
+            ></a>
           </div>
           
           <p className="mb-12 text-lg text-[#dfe4e9]">
