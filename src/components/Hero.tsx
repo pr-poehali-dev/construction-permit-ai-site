@@ -33,7 +33,7 @@ export default function Hero() {
             <span className="hidden sm:block text-gray-300">|</span>
             <a 
               href="mailto:k.karpp@mail.ru" 
-              className="flex items-center gap-3 text-lg font-semibold text-primary hover:text-accent transition-colors"
+              className="flex items-center gap-3 text-lg font-semibold hover:text-accent transition-colors text-[#fcfaf8]"
             >
               <Icon name="Mail" size={20} />
               k.karpp@mail.ru
