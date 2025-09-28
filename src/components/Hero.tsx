@@ -40,7 +40,7 @@ export default function Hero() {
             </a>
           </div>
           
-          <p className="text-secondary mb-12 text-lg">
+          <p className="mb-12 text-lg text-[#dfe4e9]">
             Работаем по всей России. Дистанционно. Без личного присутствия.
           </p>
           
