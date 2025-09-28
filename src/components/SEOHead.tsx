@@ -46,8 +46,8 @@ const SEOHead = ({
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       
       {/* Yandex.Metrika counter */}
-      <script type="text/javascript">
-        {`
+      <script type="text/javascript" dangerouslySetInnerHTML={{
+        __html: `
           (function(m,e,t,r,i,k,a){
             m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
             m[i].l=1*new Date();
@@ -56,8 +56,8 @@ const SEOHead = ({
           })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104309066', 'ym');
 
           ym(104309066, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
-        `}
-      </script>
+        `
+      }} />
       <noscript>
         <div>
           <img src="https://mc.yandex.ru/watch/104309066" style={{position:'absolute', left:'-9999px'}} alt="" />
