@@ -9,6 +9,7 @@ import Cases from "@/components/Cases";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import YandexMetrika from "@/components/YandexMetrika";
 
 const Index = () => {
   const [showAIAgent, setShowAIAgent] = useState(false);
@@ -17,6 +18,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <YandexMetrika />
       <SEOHead 
         title="Центр строительных решений - Получите разрешение на строительство без штрафов и сносов"
         description="Центр строительных решений оформляет документы на строительство и ввод в эксплуатацию по всей России. С 2004 года помогаем получить разрешения без штрафов и сносов."
