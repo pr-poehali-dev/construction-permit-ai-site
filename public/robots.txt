@@ -1,14 +1,41 @@
+User-agent: *
+Allow: /
+
+# Запрещаем индексацию служебных файлов
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /_app/
+Disallow: /admin/
+Disallow: /api/
+
+# Разрешаем индексацию основных разделов
+Allow: /
+Allow: /services/
+Allow: /cases/
+Allow: /contacts/
+
+# Указываем файл sitemap
+Sitemap: https://xn----8sbahgaasxkl7arw.xn--p1ai/sitemap.xml
+
+# Задержка между запросами для всех поисковых ботов
+Crawl-delay: 1
+
+# Специальные настройки для основных поисковиков
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+# Социальные сети для правильного отображения превью
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
-Allow: /
-
-User-agent: *
 Allow: /
