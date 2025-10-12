@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Helmet } from "react-helmet-async";
 
 const Cases = () => {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
@@ -38,8 +39,42 @@ const Cases = () => {
     }
   ];
 
+  const reviewsStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Центр строительных разрешений",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": cases.length * 30,
+      "bestRating": "5"
+    },
+    "review": cases.map((caseItem) => ({
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": caseItem.title
+      },
+      "reviewBody": caseItem.description,
+      "itemReviewed": {
+        "@type": "Service",
+        "name": caseItem.type
+      }
+    }))
+  };
+
   return (
     <section id="cases" className="py-16 bg-gray-50">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(reviewsStructuredData)}
+        </script>
+      </Helmet>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 

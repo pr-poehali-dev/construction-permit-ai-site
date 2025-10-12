@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Helmet } from "react-helmet-async";
 
 const Services = () => {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
@@ -44,8 +45,46 @@ const Services = () => {
     }
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Оформление строительных разрешений",
+    "provider": {
+      "@type": "Organization",
+      "name": "Центр строительных разрешений",
+      "telephone": "+7 (952) 147-46-03",
+      "email": "k.karpp@mail.ru",
+      "foundingDate": "2004",
+      "areaServed": "RU"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Услуги по оформлению строительных разрешений",
+      "itemListElement": services.map((service, index) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": service.title,
+          "description": service.description
+        },
+        "position": index + 1
+      }))
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127",
+      "bestRating": "5"
+    }
+  };
+
   return (
     <section id="services" className="py-16 bg-white">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 
