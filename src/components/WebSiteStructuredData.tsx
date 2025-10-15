@@ -5,13 +5,13 @@ const WebSiteStructuredData = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Центр строительных разрешений",
-    "url": "https://xn----8sbahgaasxkl7arw.xn--p1ai",
+    "url": "https://karpp.ru",
     "description": "Оформление разрешений на строительство и ввод в эксплуатацию по всей России с 2004 года",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://xn----8sbahgaasxkl7arw.xn--p1ai/?q={search_term_string}"
+        "urlTemplate": "https://karpp.ru/?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     },

@@ -15,7 +15,7 @@ Allow: /cases/
 Allow: /contacts/
 
 # Указываем файл sitemap
-Sitemap: https://xn----8sbahgaasxkl7arw.xn--p1ai/sitemap.xml
+Sitemap: https://karpp.ru/sitemap.xml
 
 # Задержка между запросами для всех поисковых ботов
 Crawl-delay: 1

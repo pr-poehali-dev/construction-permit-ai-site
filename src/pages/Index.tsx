@@ -21,9 +21,9 @@ const Index = () => {
 
 
   const breadcrumbItems = [
-    { name: "Главная", url: "https://xn----8sbahgaasxkl7arw.xn--p1ai/" },
-    { name: "Услуги", url: "https://xn----8sbahgaasxkl7arw.xn--p1ai/#services" },
-    { name: "Кейсы", url: "https://xn----8sbahgaasxkl7arw.xn--p1ai/#cases" }
+    { name: "Главная", url: "https://karpp.ru/" },
+    { name: "Услуги", url: "https://karpp.ru/#services" },
+    { name: "Кейсы", url: "https://karpp.ru/#cases" }
   ];
 
   return (
