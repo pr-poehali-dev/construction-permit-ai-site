@@ -13,6 +13,7 @@ import YandexMetrika from "@/components/YandexMetrika";
 import CookieBanner from "@/components/CookieBanner";
 import BreadcrumbStructuredData from "@/components/BreadcrumbStructuredData";
 import WebSiteStructuredData from "@/components/WebSiteStructuredData";
+import FAQ from "@/components/FAQ";
 
 const Index = () => {
   const [showAIAgent, setShowAIAgent] = useState(false);
@@ -46,6 +47,8 @@ const Index = () => {
       <Services />
       
       <Cases />
+      
+      <FAQ />
       
       <CTA showAIAgent={showAIAgent} setShowAIAgent={setShowAIAgent} />
       
