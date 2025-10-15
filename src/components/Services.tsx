@@ -48,33 +48,17 @@ const Services = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Оформление строительных разрешений",
+    "name": "Разрешение на строительство",
     "provider": {
       "@type": "Organization",
-      "name": "Центр строительных разрешений",
-      "telephone": "+7 (952) 147-46-03",
-      "email": "k.karpp@mail.ru",
-      "foundingDate": "2004",
-      "areaServed": "RU"
+      "name": "Центр строительных решений"
     },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Услуги по оформлению строительных разрешений",
-      "itemListElement": services.map((service, index) => ({
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": service.title,
-          "description": service.description
-        },
-        "position": index + 1
-      }))
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "127",
-      "bestRating": "5"
+    "areaServed": "RU",
+    "serviceType": "ConstructionPermit",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "RUB",
+      "availability": "https://schema.org/InStock"
     }
   };
 
