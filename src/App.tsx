@@ -13,6 +13,8 @@ import RazreshenieNaStroitelstvoPage from "./pages/uslugi/RazreshenieNaStroitels
 import VvodVEkspluataciuPage from "./pages/uslugi/VvodVEkspluataciuPage";
 import ZemelnyeUchastkiPage from "./pages/uslugi/ZemelnyeUchastkiPage";
 import TehnicheskijZakazchikPage from "./pages/uslugi/TehnicheskijZakazchikPage";
+import KejsyPage from "./pages/KejsyPage";
+import FAQPage from "./pages/FAQPage";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +33,8 @@ const App = () => (
             <Route path="/uslugi/vvod-v-ekspluataciyu" element={<VvodVEkspluataciuPage />} />
             <Route path="/uslugi/oformlenie-zemelnyh-uchastkov" element={<ZemelnyeUchastkiPage />} />
             <Route path="/uslugi/tehnicheskij-zakazchik" element={<TehnicheskijZakazchikPage />} />
+            <Route path="/kejsy" element={<KejsyPage />} />
+            <Route path="/faq" element={<FAQPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
