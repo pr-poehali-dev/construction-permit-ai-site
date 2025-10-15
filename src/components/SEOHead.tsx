@@ -44,8 +44,7 @@ const SEOHead = ({
       <meta name="robots" content="index, follow" />
       <meta name="author" content="Центр строительных решений" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      
-
+      <html lang="ru" />
     </Helmet>
   );
 };

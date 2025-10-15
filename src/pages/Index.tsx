@@ -10,15 +10,26 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import YandexMetrika from "@/components/YandexMetrika";
+import CookieBanner from "@/components/CookieBanner";
+import BreadcrumbStructuredData from "@/components/BreadcrumbStructuredData";
+import WebSiteStructuredData from "@/components/WebSiteStructuredData";
 
 const Index = () => {
   const [showAIAgent, setShowAIAgent] = useState(false);
 
 
 
+  const breadcrumbItems = [
+    { name: "Главная", url: "https://xn----8sbahgaasxkl7arw.xn--p1ai/" },
+    { name: "Услуги", url: "https://xn----8sbahgaasxkl7arw.xn--p1ai/#services" },
+    { name: "Кейсы", url: "https://xn----8sbahgaasxkl7arw.xn--p1ai/#cases" }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <YandexMetrika />
+      <WebSiteStructuredData />
+      <BreadcrumbStructuredData items={breadcrumbItems} />
       <SEOHead 
         title="Центр строительных решений - Получите разрешение на строительство без штрафов и сносов"
         description="Центр строительных решений оформляет документы на строительство и ввод в эксплуатацию по всей России. С 2004 года помогаем получить разрешения без штрафов и сносов."
@@ -39,6 +50,8 @@ const Index = () => {
       <CTA showAIAgent={showAIAgent} setShowAIAgent={setShowAIAgent} />
       
       <Footer />
+      
+      <CookieBanner />
 
       {/* Floating AI Agent Button */}
       <div className="fixed bottom-6 right-6 z-50">

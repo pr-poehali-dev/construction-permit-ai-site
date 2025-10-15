@@ -52,11 +52,11 @@ const Footer = () => {
         
         <Separator className="my-8 bg-gray-700" />
         
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-2">
           <p className="text-gray-400 text-sm">
-            © 2024 Центр строительных решений. Все права защищены.
+            © 2004-2025 Центр строительных решений. Все права защищены.
           </p>
-          <a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">
+          <a href="/privacy.html" target="_blank" className="text-gray-400 text-sm hover:text-white transition-colors">
             Политика конфиденциальности
           </a>
         </div>
