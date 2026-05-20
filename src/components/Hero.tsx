@@ -47,6 +47,15 @@ export default function Hero() {
               <Icon name="Send" size={20} />
               Telegram
             </a>
+            <a 
+              href="https://max.ru/+79521474603" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-[#7B61FF] hover:bg-[#6a50e0] text-white px-8 py-4 rounded font-semibold flex items-center justify-center gap-3 transition-all duration-300 hover:shadow-lg"
+            >
+              <Icon name="MessageSquare" size={20} />
+              Max
+            </a>
           </div>
         </div>
       </div>
