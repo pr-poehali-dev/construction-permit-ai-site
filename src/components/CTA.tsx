@@ -124,7 +124,7 @@ const CTA = () => {
                       k.karpp@mail.ru
                     </a>
                   </div>
-                  <div className="flex justify-center gap-4 pt-4">
+                  <div className="flex justify-center gap-4 pt-4 flex-wrap">
                     <Button 
                       className="bg-[#25D366] hover:bg-[#20bc5a] text-white font-medium"
                       onClick={() => window.open('https://wa.me/79521474603', '_blank')}
@@ -139,6 +139,14 @@ const CTA = () => {
                     >
                       <Icon name="Send" className="h-4 w-4 mr-2" />
                       Telegram
+                    </Button>
+                    <Button 
+                      variant="outline"
+                      className="border-[#7B61FF] text-[#7B61FF] hover:bg-[#7B61FF] hover:text-white font-medium"
+                      onClick={() => window.open('https://max.ru/+79521474603', '_blank')}
+                    >
+                      <Icon name="MessageSquare" className="h-4 w-4 mr-2" />
+                      Max
                     </Button>
                   </div>
                 </div>
