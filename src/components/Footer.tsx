@@ -16,11 +16,14 @@ const Footer = () => {
               Документальные операции с недвижимостью по всей России. С 2004 года.
             </p>
             <div className="flex gap-4">
-              <Button variant="ghost" size="sm" className="text-white hover:bg-white/10">
-                <Icon name="MessageSquare" className="h-4 w-4" />
+              <Button variant="ghost" size="sm" className="text-white hover:bg-white/10" onClick={() => window.open('https://wa.me/79521474603', '_blank')}>
+                <Icon name="MessageCircle" className="h-4 w-4" />
               </Button>
-              <Button variant="ghost" size="sm" className="text-white hover:bg-white/10">
+              <Button variant="ghost" size="sm" className="text-white hover:bg-white/10" onClick={() => window.open('https://t.me/csrek_bot', '_blank')}>
                 <Icon name="Send" className="h-4 w-4" />
+              </Button>
+              <Button variant="ghost" size="sm" className="text-white hover:bg-white/10" onClick={() => window.open('https://max.ru/+79521474603', '_blank')}>
+                <Icon name="MessageSquare" className="h-4 w-4" />
               </Button>
             </div>
           </div>
